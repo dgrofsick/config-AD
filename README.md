@@ -271,3 +271,41 @@ This tutorial outlines the implementation of on-premises Active Directory within
 ![image](https://github.com/dgrofsick/config-AD/assets/148154704/5fe6c86c-14e4-4674-ae3a-641c36d3627a)
 
 <br />
+
+<h3>Setting up Remote Desktop for Non-Admin Users on Client-1</h3>
+
+- Log into <b>Client-1</b> as <b>mydomain.com\jane_admin</b> and open system properties
+
+![image](https://github.com/dgrofsick/config-AD/assets/148154704/0ab6fbd9-ba94-4011-a8fc-db625928ba8b)
+
+<br />
+
+- Click <b>Remote desktop</b>
+
+![image](https://github.com/dgrofsick/config-AD/assets/148154704/6f7940f2-a81a-4843-978c-5438277cc54c)
+
+<br />
+
+- Allow “domain users” access to remote desktop
+  -  From within the remote desktop menu, click <b>Select users that can remotely access this PC</b>
+  -  Click <b>Add</b>, check names for "domain users", and click <b>OK</b>
+
+![image](https://github.com/dgrofsick/config-AD/assets/148154704/c6900d8c-1431-4456-a73b-0c6393e6a8bd)
+![image](https://github.com/dgrofsick/config-AD/assets/148154704/3994ce1b-3700-47b7-9e4a-f49faa222f99)
+
+<b>Note: You can log into Client-1 as a normal, non-administrative user now.  Normally you’d want to do this with a Group Policy that allows you to change MANY systems at once, but for demonstration purposes, we are bypassing those methods for now.</b>
+
+<br />
+
+<h3>Creating Additional Users to Log into Client-1</h3>
+
+- Login to <b>DC-1 as jane_admin</b>
+- Open <b>PowerShell_ise as an administrator</b>
+  -  In the Windows search bar, type "powershell"
+  -  Right click <b>Windows Powershell ISE</b> and select <b>Run as adminstrator</b>
+
+![image](https://github.com/dgrofsick/config-AD/assets/148154704/7162d1a5-addf-4faa-b3b5-43ec06bd7409)
+
+<br />
+<b>Note: for convenience, open the following link 
+- Create a new file and paste the contents of the script into it 
