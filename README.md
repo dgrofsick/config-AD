@@ -81,18 +81,63 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 ![image](https://github.com/dgrofsick/config-AD/assets/148154704/d6488ef8-d831-4f17-b51b-5fea14019cee)
 
-<p>
-
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
+<h3>Ensuring Connectivity</h3>
+
 </p>
+
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+
+- Login to <b>Client-1</b> with <b>Remote Desktop</b> and ping <b>DC-1’s</b> private IP address with either <b>ping (ip address)</b> or <b>ping -t (ip address)</b> (perpetual ping)
+  - Remember, when connecting to <b>Client-1</b>, the public ip address can be found by selecting it from either the <b>Resouce Groups</b> menu or the <b>Virtual Machines</b> menu within Azure.
+  - Copy the the public ip address and type <b>Remote Desktop</b> into the Windows Search bar to locate and open the app.
+  - Paste <b>Client-1's</b> ip address into the app
+  - Select <b>Connect</b>, <b>Use a different account</b>, and enter the proper login credentials associated with <b>Client-1</b>
+
 </p>
+
+- Type <b>cmd</b> within search bar belonging to the <b>Client-1 vm</b> and open <b>Command Prompt</b>
+
+![image](https://github.com/dgrofsick/config-AD/assets/148154704/ca7d602c-f794-4221-bfb1-665a3bc96cbb)
+
 <br />
+
+<b>Note:</b> The private ip should be 10.0.0.4 assuming DC-1 was the first vm created.  If not, it may be 10.0.0.5
+- As mentioned earlier, use either <b>ping (ip address)</b> or <b>ping -t (ip address)</b> for a perpetual ping request from <b>DC-1</b>
+  - Notice upon entering the ping command, the request has been timed out (denied) each time.  The following steps will remedy that.
+
+![image](https://github.com/dgrofsick/config-AD/assets/148154704/8c34afcc-5e96-4adf-a755-d6f877a828fe)
+
+<br />
+
+<p>
+
+- Log in to the <b>Domain Controller</b> <b>(DC-1)</b> and enable <b>ICMPv4</b> on the local windows firewall (refer to the steps used to log into <b>Client-1</b>, but instead using <b>DC-1's</b> menus)
+  -  In the seach bar, type <b>Windows Firewall</b> or <b>Firewall</b> and select <b>Windows Defender Firewall with Advanced Security</b>
+
+<b>Note:</b> ICMPv4 allows for pinging to register with correspoinding ip addresses
+
+![image](https://github.com/dgrofsick/config-AD/assets/148154704/f006a056-dbfb-4db3-8d91-b3b937f65876)
+
+<br />
+
+-  Select <b>Inbound Rules</b> from the lefthand menu, sort by Protocol to easily find ICMPv4 and enable pinging options from <b>Core Networking Diag. - ICMP Echo</b> (should be 2 options)
+  - Right-click your selections and click <b>Enable Rule</b> 
+
+![image](https://github.com/dgrofsick/config-AD/assets/148154704/aa29d19c-dbd4-4fd6-b8bc-3765ff5c1db5)
+
+</p>
+
+<p>
+
+- Check back at <b>Client-1</b> to see the ping succeed
+
+![image](https://github.com/dgrofsick/config-AD/assets/148154704/42896ac0-826c-4dbe-8c62-629c8f5c1606)
+
+<br />
+
+</p>
+
