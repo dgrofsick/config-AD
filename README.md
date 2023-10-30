@@ -63,8 +63,26 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 <br />
 
+- Create the Client VM using Windows 10 (21H2) and name it <b>Client-1</b>
+
+![image](https://github.com/dgrofsick/config-AD/assets/148154704/22d620f0-6bd9-4ea5-86f1-7876f2bb89bc)
+
+<br />
+
+- Use the same Resource Group and Vnet that was used the in steps to create <b>DC-1</b>
+
+![image](https://github.com/dgrofsick/config-AD/assets/148154704/4bb65d31-7b95-41fd-8591-8ac8f0d66a0d)
+
+<br />
+
+- Ensure that both VMs are in the same Vnet
+
+![image](https://github.com/dgrofsick/config-AD/assets/148154704/5974e849-c189-403d-9817-45d70e44b95f)
+
+![image](https://github.com/dgrofsick/config-AD/assets/148154704/d6488ef8-d831-4f17-b51b-5fea14019cee)
+
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
 </p>
 <p>
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
