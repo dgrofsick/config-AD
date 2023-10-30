@@ -27,9 +27,8 @@ This tutorial outlines the implementation of on-premises Active Directory within
 - Set up Remote Desktop for Non-Administrative Users on Client-1
 - Create Additional Users and Attempt to Log into Client-1 with One of the Users
 
-<h2>Deployment and Configuration Steps</h2>
 
-<h3>Setting up Resources in Azure</h3>
+<h2>Setting up Resources in Azure</h2>
 
 - Create the Domain Controller VM (Windows Server 2022) named <b>DC-1</b> using the information below.
 
@@ -84,6 +83,8 @@ This tutorial outlines the implementation of on-premises Active Directory within
 <br />
 
 <p>
+
+<h2>Setting Up Active Directory</h2>
 
 <h3>Ensuring Connectivity</h3>
 
