@@ -184,7 +184,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 <br />
 
-<h3>Creating an Admin and Nuormal User Account in Active Directory</h3>
+<h3>Creating an Admin and Normal User Account in Active Directory</h3>
 
 - In <b>Active Directory Users and Computers (ADUC)</b>, create an <b>Organizational Units (OU)</b> called <b>_EMPLOYEES</b> and <b>_ADMINS</b>
   - Mouse over to <b>Tools</b> and select <b>Active Directory Users and Computers</b>
