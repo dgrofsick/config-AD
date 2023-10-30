@@ -141,3 +141,43 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 </p>
 
+<h3>Installing Active Directory</h3>
+
+- Login to DC-1 and install Active Directory Domain Services
+  - Enter the <b>Server Manager</b> on <b>DC-1</b> (the program should already be open upon logging into <b>DC-1</b>)
+  - Go to <b>Manage</b> in the top right and select <b>Add Roles and Features</b>
+ 
+![image](https://github.com/dgrofsick/config-AD/assets/148154704/3616c29c-b6b0-4b26-aef6-e56258da02e4)
+
+<br />
+
+- Continue to click <b>Next</b> until the roles show up and find <b>Active Directory Domain Services</b> and intall
+
+![image](https://github.com/dgrofsick/config-AD/assets/148154704/4aa3fb01-a963-434e-882b-94f2bf990687)
+
+<br />
+
+- Be sure to check <b>[ ] Restart the destination server automatically if required</b> as this step will be required as we continue along.
+
+![image](https://github.com/dgrofsick/config-AD/assets/148154704/ca23ca49-ab99-4d82-b4cf-8fe613722c2f)
+![image](https://github.com/dgrofsick/config-AD/assets/148154704/6d81efda-1247-444b-bba5-e10fdfd23320)
+
+<br />
+
+- Promote <b>DC-1</b> as a domain controller
+  - Click the <b>flag</b> in the top right and select <b>Promote this server to a domain controller</b>
+  - Select <b>Add a new forest</b>, use the domain name <b>mydomain.com</b> (or whatever you choose) and hit <b>Next</b>
+  - Use password: <b>Password1</b> (or whatever you choose) and click <b>Next</b> until installation is complete.
+
+![image](https://github.com/dgrofsick/config-AD/assets/148154704/c911a5c8-f2f9-442c-920d-d0f2c0f9f063)
+![image](https://github.com/dgrofsick/config-AD/assets/148154704/5082c8a3-2ce3-407b-ac67-05a576f0d983)
+![image](https://github.com/dgrofsick/config-AD/assets/148154704/97b3c9b1-cd7c-4720-9335-14d60b51dcc9)
+
+ 
+ <br />
+
+- Restart <b>DC-1</b> and then log back in as user: <b>mydomain.com\ADuser</b>
+
+<b>Note: Remember to use BACK SLASH '\' in your username NOT forward slash '/' </b>
+
+![image](https://github.com/dgrofsick/config-AD/assets/148154704/d11801ba-34e8-47d8-948d-cc6e0e448262)
