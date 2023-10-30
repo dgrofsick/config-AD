@@ -307,5 +307,39 @@ This tutorial outlines the implementation of on-premises Active Directory within
 ![image](https://github.com/dgrofsick/config-AD/assets/148154704/7162d1a5-addf-4faa-b3b5-43ec06bd7409)
 
 <br />
-<b>Note: for convenience, open the following link 
-- Create a new file and paste the contents of the script into it 
+
+<b>Note: for convenience, open the following link https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1, that was graciously provided</b>
+
+- Create a new file and paste the contents of the script below into it (be sure to use the link above)
+  -  Within Powershell, first click the <b>New File</b> button in the top left
+  -  Click the above link, locate the <b>Raw</b> button and click it (for raw code contents of the script provided on the page)
+  -  Highlight the entire script and copy
+
+![image](https://github.com/dgrofsick/config-AD/assets/148154704/ce17d304-6066-4910-9a92-c7d05002dbe2)
+![image](https://github.com/dgrofsick/config-AD/assets/148154704/3ad5ac55-5725-4e4b-84c4-16d7d3003ea7)
+
+<br />
+
+-  Paste the copied code into the blank white space within Powershell
+    - Notice within the top of the code:
+    - -  $PASSWORD_FOR_USERS   = "Password1"
+    - -  $NUMBER_OF_ACCOUNTS_TO_CREATE = 10000
+    - Note the password for any and all users created with this script will be <b>Password1</b>
+    - In addition the current amount of users created by this script is defaulted to 10,000.  For time's sake, we will edit that number to 100
+- Run the code using the 'green play' button highlighted in the image below and notice the user accounts being created
+![image](https://github.com/dgrofsick/config-AD/assets/148154704/ff8eae24-86d0-4714-9771-898c748578cc)
+
+<br />
+
+- When finished, open ADUC and observe the accounts in the appropriate OU
+
+![image](https://github.com/dgrofsick/config-AD/assets/148154704/f7216fff-e055-4a1a-809b-f6e968369b84)
+
+<br />
+
+- Attempt to log into Client-1 with one of the accounts (remember the password in the script: <b>Password1</b>)
+  - The user names created from the provided code will be completely random, so during the time of doing this demonstration on my own end, I opted to choose <b>"bobo.tutek"</b>.  Feel free to select any of the provided names you end up with for this step.
+ 
+![image](https://github.com/dgrofsick/config-AD/assets/148154704/4c0de094-ad38-4c22-b3ac-2376050c249a)
+![image](https://github.com/dgrofsick/config-AD/assets/148154704/8cbbd46f-b6e4-40b1-8d95-86e2fc6a668a)
+
