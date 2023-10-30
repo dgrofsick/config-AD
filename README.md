@@ -343,3 +343,4 @@ This tutorial outlines the implementation of on-premises Active Directory within
 ![image](https://github.com/dgrofsick/config-AD/assets/148154704/4c0de094-ad38-4c22-b3ac-2376050c249a)
 ![image](https://github.com/dgrofsick/config-AD/assets/148154704/8cbbd46f-b6e4-40b1-8d95-86e2fc6a668a)
 
+- Congratulations!  We just completed setting up an example of Active Directory with a pool of random users to log in with.  From here on while this system is still running, you can log in as whoever you choose.  If any errors occur, such as failed log in attempts, the jane_admin account can be used to address that issue by right-clicking that account from within ADUC's users folder and changing any required settings/permissions (i.e. resetting the user's password or unlocking the account from too many failed login attempts.)
