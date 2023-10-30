@@ -181,3 +181,92 @@ This tutorial outlines the implementation of on-premises Active Directory within
 <b>Note: Remember to use BACK SLASH '\' in your username NOT forward slash '/' </b>
 
 ![image](https://github.com/dgrofsick/config-AD/assets/148154704/d11801ba-34e8-47d8-948d-cc6e0e448262)
+
+<br />
+
+<h3>Creating an Admin and Nuormal User Account in Active Directory</h3>
+
+- In <b>Active Directory Users and Computers (ADUC)</b>, create an <b>Organizational Units (OU)</b> called <b>_EMPLOYEES</b> and <b>_ADMINS</b>
+  - Mouse over to <b>Tools</b> and select <b>Active Directory Users and Computers</b>
+  - Right-click <b>mydomain.com</b> on the left, hover over <b>New</b>, select <b>Orginizational Unit</b>
+ 
+![image](https://github.com/dgrofsick/config-AD/assets/148154704/72f38f0c-7e51-41e0-a7d4-e3ba79b4fc60)
+![image](https://github.com/dgrofsick/config-AD/assets/148154704/6d0d1a4f-9d19-4e8e-8513-6ab9f9cd6ee5)
+
+<br />
+
+- Create a new employee named <b>Jane Doe</b> with the username of <b>jane_admin</b> with same password used earlier <b>(Password1)</b>
+  -  Right-click <b>_ADMINS</b>, hover over <b>New</b>, select <b>User</b>
+  -  Leave <b>[ ] User must change password at next logon</b> unchecked
+
+![image](https://github.com/dgrofsick/config-AD/assets/148154704/3a3cf9fe-3008-4b71-91f1-9c9a0e91a120)
+![image](https://github.com/dgrofsick/config-AD/assets/148154704/bf222a02-16eb-45bc-aabf-433bfa49b25f)
+![image](https://github.com/dgrofsick/config-AD/assets/148154704/466752d2-ace3-4d3d-97ea-b042d9118137)
+
+<br />
+
+- Add <b>jane_admin</b> to the <b>Domain Admins Security Group</b>
+  - Right-click <b>Jane Doe</b> and select <b>Properties</b>
+  - Within the Properties menu, click the <b>Member Of</b> tab and click <b>Add</b>
+  - Check names for "domain", select <b>Domain Admins</b> click <b>OK->Apply->OK</b>
+
+<b>Note: Once a user is created, they must be assigned this way to offcially be added to an intended group.</b> 
+
+![image](https://github.com/dgrofsick/config-AD/assets/148154704/70875bb9-78e7-4902-bc85-1d5fab5c156c)
+![image](https://github.com/dgrofsick/config-AD/assets/148154704/f2027610-6bbd-478a-921e-b6acf78565ac)
+![image](https://github.com/dgrofsick/config-AD/assets/148154704/91188ac7-3936-41b7-8467-d884ed732d58)
+
+<br />
+
+- Log out of <b>DC-1</b> and log back in as <b>mydomain.com\jane_admin</b>
+
+![image](https://github.com/dgrofsick/config-AD/assets/148154704/579ccf4e-bcf5-4830-88d3-2b1be4626a00)
+
+<b>Note: User jane_admin will be used as your admin account from now on within this exercise.</b>  
+
+<br />
+
+<h3>Joining Client-1 to Your Domain</h3>
+
+- From the Azure Portal, set <b>Client-1’s</b> DNS settings to the <b>Domain Controller’s Private IP address</b>
+  -  Go to Azure and copy <b>DC-1's private IP</b>
+  -  Go to <b>Client-1</b>, click on <b>Networking</b> on the left, select the network interface link <b>client-1771_z1<b> (odds are your interface link will be different but use the below image to properly locate it)
+  -  Click <b>DNS servers</b> on the left, select the <b>Custom</b> option and enter/paste <b>DC-1's private IP</b>, and select <b>Save</b>
+
+<b>Note: by doing the above steps, Client-1 will be recognized within DC-1's network</b>
+
+![image](https://github.com/dgrofsick/config-AD/assets/148154704/2ccdf32f-77ff-4aa0-abd4-ade9485da87c)
+![image](https://github.com/dgrofsick/config-AD/assets/148154704/23a73fdd-4493-4b26-ab59-64ea1ac1f03e)
+
+<br />
+
+- From the Azure Portal, restart <b>Client-1</b>
+
+![image](https://github.com/dgrofsick/config-AD/assets/148154704/ab1c3d16-b82b-46fb-adf2-cb3439fb7dea)
+
+<br />
+
+- Login to <b>Client-1</b> via Remote Desktop as the original local admin (mydomain.com\ADuser) and join it to the domain
+  -  Right-click the Windows icon and select <b>System</b>
+  -  Click <b>Rename this pc (advanced)</b> on the right side
+  -  Select <b>Change</b>
+  -  Click the <b>Domain</b> bubble, enter <b>mydomain.com</b> and click <b>OK</b>
+  -  Use the log in info created in the beginning (mydomain.com\jane_admin - Password1.) to allow access to this admin user. 
+
+![image](https://github.com/dgrofsick/config-AD/assets/148154704/9e558e6f-d559-4ef1-808d-693d639c061e)
+![image](https://github.com/dgrofsick/config-AD/assets/148154704/abdccd09-b77a-491f-98ef-d33b664d3edb)
+
+<br />
+
+- Log in to the <b>Domain Controller</b> via Remote Desktop and verify <b>Client-1</b> shows up in Active Directory Users and Computers (ADUC) inside the Computers folder
+
+![image](https://github.com/dgrofsick/config-AD/assets/148154704/09b727ef-2220-4a81-8222-7c0a69ce0b82)
+
+<br />
+
+- For organnization purposes, you can create a new organizational unit called <b>_CLIENTS</b> and drag <b>Client-1</b> to it from the Computers folder
+
+
+![image](https://github.com/dgrofsick/config-AD/assets/148154704/5fe6c86c-14e4-4674-ae3a-641c36d3627a)
+
+<br />
