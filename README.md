@@ -34,11 +34,11 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 <b>Note: Keep the Resource Group and Virtual Network (Vnet) that get created at this time in mind.</b>
 
-![image](https://github.com/dgrofsick/config-AD/assets/148154704/0c3a7e80-c66b-4edd-82ed-4ef134f1b283)
+![Step 1](https://github.com/dgrofsick/config-AD/assets/148154704/2fcfcddd-e12a-4923-b26c-db92ad868881)
 
-![image](https://github.com/dgrofsick/config-AD/assets/148154704/f4762546-1ad2-44a4-ba2f-62f565c42663)
+![Step 2](https://github.com/dgrofsick/config-AD/assets/148154704/a87f0207-43a9-4984-9452-1b9cc4fa23c4)
 
-![image](https://github.com/dgrofsick/config-AD/assets/148154704/a9d69d77-640f-4697-bcdc-ea4a68e84717)
+![Step 3](https://github.com/dgrofsick/config-AD/assets/148154704/f8379b57-37cc-47ee-9260-4a52d293345c)
 
 ![image](https://github.com/dgrofsick/config-AD/assets/148154704/1f5853b2-504b-493d-aac4-173ba03c5b86)
 
@@ -52,25 +52,25 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 </p>
 
-![image](https://github.com/dgrofsick/config-AD/assets/148154704/32033cc9-2cc0-449b-9706-ea4c61f5f807)
+![Step 5](https://github.com/dgrofsick/config-AD/assets/148154704/2da7b509-15db-4263-94fc-93fa3461de82)
 
-![image](https://github.com/dgrofsick/config-AD/assets/148154704/db9b4ccd-5e4d-49ad-98f4-57fd6e192de6)
+![Step 6](https://github.com/dgrofsick/config-AD/assets/148154704/fa1a3658-6be3-4382-bc2c-38bcb10b2f59)
 
-![image](https://github.com/dgrofsick/config-AD/assets/148154704/5b1cc7df-4941-48cd-8fb8-2a84af59472a)
+![Step 7](https://github.com/dgrofsick/config-AD/assets/148154704/a82fb6fc-958f-445f-a83f-bd653a7037ba)
 
-![image](https://github.com/dgrofsick/config-AD/assets/148154704/4f6bbc7a-e137-46fc-a1fe-30a8b54f2b4a)
+![Step 8](https://github.com/dgrofsick/config-AD/assets/148154704/43e2a444-e550-4c80-a5e6-87197a710304)
 
 <br />
 
 - Create the Client VM using Windows 10 (21H2) and name it <b>Client-1</b>
 
-![image](https://github.com/dgrofsick/config-AD/assets/148154704/22d620f0-6bd9-4ea5-86f1-7876f2bb89bc)
+![Step 9](https://github.com/dgrofsick/config-AD/assets/148154704/b6fc9ff0-c906-4446-8710-4113b590a98b)
 
 <br />
 
 - Use the same Resource Group and Vnet that was used the in steps to create <b>DC-1</b>
 
-![image](https://github.com/dgrofsick/config-AD/assets/148154704/4bb65d31-7b95-41fd-8591-8ac8f0d66a0d)
+![Step 10](https://github.com/dgrofsick/config-AD/assets/148154704/afd11d10-984f-4c99-b955-6014679919a2)
 
 <br />
 
@@ -116,7 +116,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 <p>
 
-- Log in to the <b>Domain Controller</b> <b>(DC-1)</b> and enable <b>ICMPv4</b> on the local windows firewall (refer to the steps used to log into <b>Client-1</b>, but instead using <b>DC-1's</b> menus)
+- Log in to the <b>Domain Controller</b> <b>(DC-1)</b> and enable <b>ICMPv4</b> on the local windows firewall (refer to the steps used to log into <b>Client-1</b>, but this time using <b>DC-1's</b> menus)
   -  In the seach bar, type <b>Windows Firewall</b> or <b>Firewall</b> and select <b>Windows Defender Firewall with Advanced Security</b>
 
 <b>Note:</b> ICMPv4 allows for pinging to register with correspoinding ip addresses
@@ -152,7 +152,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 <br />
 
-- Continue to click <b>Next</b> until the roles show up and find <b>Active Directory Domain Services</b> and intall
+- Continue to click <b>Next</b> until the roles show up.  Find <b>Active Directory Domain Services</b> and intall
 
 ![image](https://github.com/dgrofsick/config-AD/assets/148154704/4aa3fb01-a963-434e-882b-94f2bf990687)
 
